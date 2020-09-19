@@ -4,9 +4,12 @@
     
     <ActionBar>
         <Label text="Home"></Label>
+        <ActionItem text="refresh" tap="onRefresh"></ActionItem>
     </ActionBar>
 
     <GridLayout>
         <!-- Add your page content here -->
+        <WebView row="1" loadFinished="onWebViewLoaded" id="myWebView" src="{{ webViewSRC }}" />
+
     </GridLayout>
 </Page>
