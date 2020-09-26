@@ -13,7 +13,7 @@
   "repository": "<fill-your-repository-here>",
   "dependencies": {
     "@nativescript/theme": "~2.3.0",
-    "nativescript-generate-pdf": "file:../src",
+    "nativescript-generate-pdf-with-html": "file:../src",
     "nativescript-permissions": "^1.3.9",
     "tns-core-modules": "~6.5.0"
   },

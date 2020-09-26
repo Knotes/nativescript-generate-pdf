@@ -10,21 +10,23 @@ export class GeneratePdf extends Observable {
     super();
   }
 
-  createPdf(webView: android.webkit.WebView) {
+  createPdf(webView: android.webkit.WebView, fileName: string) {
     const activity = application.android.foregroundActivity || application.android.startActivity
     const printManager = activity
       .getSystemService(android.content.Context.PRINT_SERVICE);
     const printAdapter = webView.createPrintDocumentAdapter();
-    const jobName = utils.ad.resources.getStringId("app_name") + ' Document';
+    const jobName = utils.ad.resources.getStringId('app_name') + ' Document';
 
     if (printManager != null) {
       printManager.print(jobName, printAdapter, null);
     }
+
+    return '';
   }
 
   generatePdfData() { }
 
-  saveWebViewPdf() {
+  saveWebViewPdf(fileName: string) {
     return ''
   }
 }

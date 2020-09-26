@@ -1,7 +1,7 @@
 {
-	"name": "nativescript-generate-pdf",
+	"name": "nativescript-generate-pdf-with-html",
 	"version": "1.0.0",
-	"description": "Your awesome NativeScript plugin.",
+	"description": "Generate pdf file with a webview and html.",
 	"main": "generate-pdf",
 	"typings": "index.d.ts",
 	"nativescript": {
