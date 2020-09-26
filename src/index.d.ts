@@ -1,6 +1,11 @@
-import { Common } from './generate-pdf.common';
-export declare class GeneratePdf extends Common {
-  // define your typings manually
-  // or..
-  // take the ios or android .d.ts files and copy/paste them here
+import { Observable } from 'tns-core-modules/data/observable';
+import { WebView } from 'tns-core-modules/ui/web-view';
+
+export declare class GeneratePdf extends Observable {
+  private pageRenderer;
+  private pdfData;
+  constructor();
+  createPdf(webView: WebView): void;
+  generatePdfData(): void;
+  saveWebViewPdf(): string;
 }
