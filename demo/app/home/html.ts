@@ -2,6 +2,7 @@ export const html = `<!doctype html>
 <html>
   <head>
     <title>100 Tricks to Appear Smart in Meetings</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       @import url('https://fonts.loli.net/css?family=Lato:400,700,400italic,700italic&subset=latin');

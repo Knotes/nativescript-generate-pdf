@@ -14,16 +14,14 @@ export class HomeViewModel extends Observable {
     }
 
     getHtmlPath() {
-        if (isIOS) {
-            return encodeURI(`${fs.knownFolders.currentApp().path}/www/test.html`);
-        } else {
+        if (!isIOS) {
             permissions.requestPermission([
                 android.Manifest.permission.READ_EXTERNAL_STORAGE,
                 android.Manifest.permission.WRITE_EXTERNAL_STORAGE
             ], 'Need to save files to disk');
-            const htmlFile = fs.knownFolders.temp().getFile("index.html");
-            htmlFile.writeTextSync(html);
-            return htmlFile.path;
         }
+        const htmlFile = fs.knownFolders.temp().getFile("index.html");
+        htmlFile.writeTextSync(html);
+        return htmlFile.path;
     }
 }
