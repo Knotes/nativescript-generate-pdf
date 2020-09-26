@@ -28,7 +28,7 @@ Check out the demo folder.
 import { GeneratePdf } from 'nativescript-generate-pdf';
 
 function onWebViewLoaded(args: LoadEventData) {
-    webView = (<WebView>args.object).nativeView;
+    const webView = (<WebView>args.object).nativeView;
     // For iOS, use the file path returned by createPdf.
     new GeneratePdf().createPdf(webView, 'MyPdfFileName');
 }
