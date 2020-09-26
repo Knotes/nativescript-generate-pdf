@@ -25,6 +25,5 @@ export function onWebViewLoaded(args: LoadEventData) {
 }
 
 export function onRefresh(args: LoadEventData) {
-    alert('asdfa')
     webView.reload()
 }

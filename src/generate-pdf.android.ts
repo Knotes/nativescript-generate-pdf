@@ -1,5 +1,6 @@
-import { Observable } from 'tns-core-modules/data/observable';
-import * as application from 'tns-core-modules/application';
+import { Observable } from "tns-core-modules/data/observable";
+import * as application from "tns-core-modules/application";
+import * as utils from "tns-core-modules/utils/utils";
 
 export class GeneratePdf extends Observable {
   private pageRenderer: any;
@@ -10,23 +11,18 @@ export class GeneratePdf extends Observable {
   }
 
   createPdf(webView: android.webkit.WebView) {
-    const printManager = application.android.context
+    const activity = application.android.foregroundActivity || application.android.startActivity
+    const printManager = activity
       .getSystemService(android.content.Context.PRINT_SERVICE);
     const printAdapter = webView.createPrintDocumentAdapter();
-    const jobName = "Print Test";
-
-    const attributes = application.android.context.print.PrintAttributes.Builder()
-      .setMediaSize(application.android.context.print.PrintAttributes.MediaSize.ISO_A4)
-      .setResolution(application.android.context.print.PrintAttributes.Resolution("pdf", "pdf", 600, 600))
-      .setMinMargins(application.android.context.print.PrintAttributes.Margins.NO_MARGINS).build()
+    const jobName = utils.ad.resources.getStringId("app_name") + ' Document';
 
     if (printManager != null) {
-      printManager.print(jobName, printAdapter, attributes);
+      printManager.print(jobName, printAdapter, null);
     }
   }
 
-  generatePdfData() {
-  }
+  generatePdfData() { }
 
   saveWebViewPdf() {
     return ''
